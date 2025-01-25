@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <p>Password Generator</p>
+            <div class="Input">
+                <input type="text" id="name" placeholder="Enter your first name"><br><br>
+                <input type="text" id="lastname" placeholder="Enter your last name"><br><br>
+                <input type="number" id="number" placeholder="Enter your number"> <br><br><br>
+            </div>
+            <input type="text" id="Password"><br><br>
+            <button onclick="pass()">Generate Password</button>
+        </div>
+    </div>
+    <script>
+        const Password = document.getElementById("Password");
+        function pass(){
+            const name = document.getElementById("name").value;
+            const lastname = document.getElementById("lastname").value;
+            const number= document.getElementById("number").value;
+            const special="@#$&/?";
+
+            let pass="";
+
+            pass = pass + name[Math.floor(Math.random() * name.length)];
+            pass = pass + name[Math.floor(Math.random()*name.length)];
+            pass = pass + name[Math.floor(Math.random()*name.length)];
+            
+            
+
+            pass = pass + lastname[Math.floor(Math.random()*lastname.length)];
+            pass = pass + lastname[Math.floor(Math.random()*lastname.length)];
+
+            pass = pass + special[Math.floor(Math.random()*special.length)];
+
+            pass = pass + number[Math.floor(Math.random()*number.length)];
+            pass = pass + number[Math.floor(Math.random()*number.length)];
+            pass = pass + number[Math.floor(Math.random()*number.length)];
+            pass = pass + number[Math.floor(Math.random()*number.length)];
+
+            Password.value = pass;
+            
+            
+
+            
+        }
+    </script>
+    
+</body>
+</html>
